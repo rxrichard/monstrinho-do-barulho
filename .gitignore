@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Build (PyInstaller / Inno Setup)
+build/
+dist/
+release/
+*.spec
+
+# Configurações locais geradas ao rodar os programas
+config_professor.json
+config_professor.json.tmp
+/src/config_aluno.ini
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

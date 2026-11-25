@@ -1,0 +1,39 @@
+﻿REGRAS DE USO - MONSTRINHO DO BARULHO (programa do aluno)
+
+Leia com atenção antes de instalar.
+
+1. O QUE ESTE PROGRAMA FAZ
+ - Mostra, no canto da tela (logo acima do relógio), o tempo restante da aula.
+ - Mostra os avisos do "monstrinho" quando a sala fica barulhenta.
+ - Avisa quando faltam 5 minutos para o fim da aula.
+
+2. BARULHO E BLOQUEIO DE TELA
+ - O som é medido SOMENTE no computador do professor. Este programa NÃO usa
+   o microfone nem a câmera deste computador e não grava nada.
+ - Depois de alguns avisos, a tela pode ser bloqueada por pouco tempo
+   (30 segundos, depois 1 minuto, depois 2 minutos). Ela é liberada sozinha
+   quando o tempo acaba, ou pelo professor a qualquer momento.
+ - No fim da aula, as telas são bloqueadas até o professor liberar.
+ - Ficando um tempo sem avisos, tudo volta ao zero ("ficha limpa").
+
+3. REGRAS DA SALA
+ - Não feche, não esconda e não tente desativar a janelinha do cronômetro.
+ - Fale baixo e respeite os colegas: o monstrinho está ouvindo!
+ - Se algo parecer errado (sem conexão, tela travada sem motivo), chame o
+   professor.
+
+4. PRIVACIDADE
+ - O programa conversa apenas com o computador do professor, dentro da rede
+   da escola. Nenhuma informação é enviada para a internet.
+ - O bloqueio de tela é feito pelo Veyon, o programa de gerenciamento de sala
+   já usado nestes computadores.
+
+5. INSTALAÇÃO
+ - Deve ser feita por um professor ou pelo responsável técnico.
+ - Na primeira abertura será pedido o CÓDIGO DO PAINEL, que aparece no topo
+   do painel do professor.
+ - Para trocar o código depois: Menu Iniciar > Monstrinho do Barulho >
+   "Configurar código do painel".
+ - Para remover: Configurações do Windows > Aplicativos.
+
+Ao clicar em "Eu aceito o acordo", você concorda com estas regras.

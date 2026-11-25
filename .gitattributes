@@ -1,0 +1,10 @@
+* text=auto
+# Arquivos do Windows precisam de CRLF
+*.bat text eol=crlf
+*.iss text eol=crlf
+*.ini text eol=crlf
+installer/*.txt text eol=crlf
+# Binários
+*.bmp binary
+*.ico binary
+*.png binary

@@ -1,0 +1,33 @@
+﻿PAINEL DO PROFESSOR - LEIA ANTES DE INSTALAR
+
+REQUISITOS
+ - Windows 10 ou 11 (64 bits) e um microfone funcionando.
+ - Veyon instalado NESTE computador com o componente "Veyon Master".
+   Os computadores dos alunos precisam do Veyon (serviço) com as MESMAS
+   chaves de autenticação. Teste antes: o próprio Veyon Master deve
+   conseguir bloquear a tela de um aluno.
+ - Professor e alunos na mesma rede da escola.
+ - Não é preciso instalar o Python: tudo já vem incluído.
+
+O QUE O INSTALADOR FAZ
+ - Instala o painel e cria atalhos no Menu Iniciar (e na Área de Trabalho).
+ - Libera no Firewall do Windows a porta 5000, usada pelos alunos para
+   consultar o cronômetro e o monstrinho.
+ - Opcional: abrir o painel junto com o Windows.
+
+DEPOIS DE INSTALAR
+ 1. Abra o painel. O CÓDIGO DO PAINEL aparece na caixa roxa do topo.
+ 2. Instale o programa do aluno em cada computador e digite esse código
+    na primeira abertura.
+ 3. No painel, escreva a lista de computadores dos alunos (os mesmos
+    nomes/IPs usados no Veyon Master), escolha o microfone e ajuste a
+    sensibilidade.
+ 4. Clique em "Diagnóstico do Veyon" para testar o travamento de tela.
+
+BOM SABER
+ - Os alunos procuram o painel sempre que o computador liga e o
+   reencontram sozinhos mesmo se o IP deste computador mudar.
+ - A identidade do painel fica em C:\ProgramData\Monstrinho. Ela é mantida
+   mesmo se você desinstalar e instalar de novo.
+ - Privacidade: o som é usado só para medir o volume, na hora. Nada é
+   gravado nem enviado para a internet.

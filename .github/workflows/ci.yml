@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  testes:
+    name: Testes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Dependências
+        run: pip install flask numpy pytest
+      - name: Pytest
+        run: pytest -q
+
+  instaladores:
+    name: Instaladores (Windows)
+    needs: testes
+    runs-on: windows-latest
+    permissions:
+      contents: write   # para anexar os instaladores no Release (tags v*)
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Dependências
+        run: pip install -r requirements-dev.txt
+      - name: Programa do aluno (PyInstaller)
+        run: pyinstaller --noconfirm --clean --onefile --windowed --name MonstrinhoAluno --icon installer\monstrinho.ico src\cliente_aluno.pyw
+      - name: Painel do professor (PyInstaller)
+        run: pyinstaller --noconfirm --clean --onedir --windowed --name MonstrinhoProfessor --icon installer\monstrinho.ico src\servidor_veyon.py
+      - name: Inno Setup
+        run: choco install innosetup -y --no-progress
+      - name: Gerar instaladores
+        run: |
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" installer\instalador_professor.iss
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" installer\instalador_aluno.iss
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: instaladores
+          path: release/*.exe
+      - name: Publicar no Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/*.exe
